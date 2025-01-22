@@ -19,4 +19,20 @@ run;
 proc contents data=r.BRFSS_a;
 run;
 
+/*proc freq without options*/
+
+proc freq data=r.BRFSS_b;
+	tables VETERAN3;
+run;
+
+/*check exclusions with the missing option*/
+
+proc freq data=r.BRFSS_b;
+	tables VETERAN3 / missing;
+	tables DIABETE3 / missing;
+	tables SLEPTIM1 / missing;
+	tables ASTHMA3 / missing;
+run;
+
+
 
